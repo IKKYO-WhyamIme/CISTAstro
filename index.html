@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="CIST Astronomy は、宇宙観測・星空写真・天文学を楽しむ大学の天文サークルです。イベント情報や活動内容を紹介します。">
+  <meta name="keywords" content="天文サークル, 星空, 宇宙, 天体観測, CIST Astronomy, 星空写真, 望遠鏡, 星空イベント">
+  <meta name="author" content="CIST Astronomy">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#080c18">
+  <meta name="format-detection" content="telephone=no">
+
+  <title>天文サークル</title>
+
+  <meta property="og:title" content="CIST Astronomy - 天文サークル">
+  <meta property="og:description" content="CIST Astronomy は、宇宙観測・星空写真・天文学を楽しむ大学の天文サークルです。">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="CIST Astronomy">
+  <meta property="og:locale" content="ja_JP">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1465101162946-4377e57745c3?auto=format&fit=crop&w=1200&q=80">
+  <meta property="og:url" content="https://example.com/">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="CIST Astronomy - 天文サークル">
+  <meta name="twitter:description" content="宇宙観測・星空写真・天文学を楽しむ大学の天文サークル。イベント情報や活動内容を紹介します。">
+  <meta name="twitter:image" content="https://images.unsplash.com/photo-1465101162946-4377e57745c3?auto=format&fit=crop&w=1200&q=80">
+
+  <!-- Google Fonts & FontAwesome -->
+  <link rel="stylesheet" href="styles.css"> <!-- temporary -->
+  <script src="script.js" defer></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Noto+Sans+JP:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+  <!-- 背景星空キャンバス -->
+  <canvas id="stars-canvas"></canvas>
+
+  <!-- ヘッダー (Fixed) -->
+  <header>
+    <div class="container header-container">
+      <a href="#home" class="logo">
+        <i class="fa-solid fa-meteor"></i> CIST Astronomy
+      </a>
+      <div class="menu-toggle" id="menu-toggle">
+        <i class="fa-solid fa-bars"></i>
+      </div>
+      <nav>
+        <ul class="nav-menu" id="nav-menu">
+          <li><a href="#home" class="nav-link active">Home</a></li>
+          <li><a href="#about" class="nav-link">About</a></li>
+     <!-- <li><a href="#activity" class="nav-link">Activity</a></li> -->
+          <li><a href="#live" class="nav-link">Live</a></li>
+          <li><a href="#sns" class="nav-link">SNS</a></li>
+          <li><a href="#portal" class="nav-link portal-btn">Portal</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- メインビジュアル (Home) -->
+  <section id="home" class="hero">
+    <div class="hero-content">
+      <h1>CIST Astronomy</h1>
+      <p class="subtitle">科技大天文サークル</p>
+      <div class="hero-btns">
+        <a href="#about" class="btn btn-primary">サークルについて</a>
+        <a href="#live" class="btn btn-secondary">ライブ情報</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 写真ギャラリー -->
+  <div class="container">
+    <div class="photo-grid">
+      <div class="photo-card">
+        <img src="" alt="満天の星空">
+        <div class="photo-overlay">
+          <h4>ある写真</h4>
+          <p>ある場所でのある写真</p>
+        </div>
+      </div>
+      <div class="photo-card">
+        <img src="" alt="天体望遠鏡">
+        <div class="photo-overlay">
+          <h4>ある写真</h4>
+          <p>ある場所でのある写真</p>
+        </div>
+      </div>
+      <div class="photo-card">
+        <img src="" alt="深宇宙ギャラクシー">
+        <div class="photo-overlay">
+          <h4>ある写真</h4>
+          <p>ある場所でのある写真</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- サークル紹介 (About) -->
+  <section id="about">
+    <div class="container">
+      <div class="section-title">
+        <h2>About Us</h2>
+        <p>サークル概要</p>
+      </div>
+      <div class="glass-card about-content">
+        <div class="about-text">
+          <h3>夜空を見上げ。</h3>
+          <p>私たち天文サークルは、今年2026年設立したばかりのピチピチサークルです。</p>
+          <p>様々な場所で天体観測・写真撮影を行い、宇宙の壮観さや神々しさを伝えていきます。</p>
+        </div>
+        <div class="about-stats">
+          <div class="stat-box">
+            <i class="fa-solid fa-users"></i>
+            <span class="stat-number">a人</span>
+            <span class="stat-label">サークル部員数</span>
+          </div>
+          <div class="stat-box">
+            <i class="fa-solid fa-telescope"></i>
+            <span class="stat-number">b台</span>
+            <span class="stat-label">保有天体望遠鏡</span>
+          </div>
+          <div class="stat-box">
+            <i class="fa-solid fa-calendar-check"></i>
+            <span class="stat-number">月c〜d回</span>
+            <span class="stat-label">定期観測会</span>
+          </div>
+          <div class="stat-box">
+            <i class="fa-solid fa-campground"></i>
+            <span class="stat-number">年e回</span>
+            <span class="stat-label">観測合宿</span>
+          </div>
+          <div class="stat-box">
+            <i class="fa-solid fa-camera"></i>
+            <span class="stat-number">a, b, c, d, e ∈ ℝ</span>
+            <span class="stat-label"></span>
+            <span class="stat-label">文字の定義</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 活動紹介 (Activity) -->
+   <!--
+  <section id="activity">
+    <div class="container">
+      <div class="section-title">
+        <h2>Activity</h2>
+        <p>活動内容</p>
+      </div>
+      <div class="activity-grid">
+        <div class="glass-card activity-card">
+          <div class="activity-icon-wrapper">
+            <i class="fa-solid fa-star"></i>
+          </div>
+          <h3>天体観測会</h3>
+          <p>月に1〜2回、光害の少ない郊外へ移動して星空を観察。季節ごとの星座や惑星、流星群などを大型望遠鏡で観測します。</p>
+        </div>
+        <div class="glass-card activity-card">
+          <div class="activity-icon-wrapper">
+            <i class="fa-solid fa-camera"></i>
+          </div>
+          <h3>天体写真撮影</h3>
+          <p>一眼レフや天体専用カメラを用いて、星景写真や深宇宙（銀河・星雲）の撮影・画像処理技術を学び合います。</p>
+        </div>
+        <div class="glass-card activity-card">
+          <div class="activity-icon-wrapper">
+            <i class="fa-solid fa-globe"></i>
+          </div>
+          <h3>プラネタリウム</h3>
+          <p>学園祭での自作ドームプラネタリウムの運営や、館内プラネタリウムの鑑賞ツアーなどを企画・開催しています。</p>
+        </div>
+        <div class="glass-card activity-card">
+          <div class="activity-icon-wrapper">
+            <i class="fa-solid fa-book-open"></i>
+          </div>
+          <h3>勉強会・合宿</h3>
+          <p>天文学の基礎知識を深める勉強会や、夏・冬の長期休暇を利用した長野や福島への本格観測合宿を実施しています。</p>
+        </div>
+      </div>
+    </div>
+  </section> -->
+
+  <!-- 直近のライブ・観測会 (Live) -->
+  <section id="live">
+    <div class="container">
+      <div class="section-title">
+        <h2>Live & Events</h2>
+        <p>直近の観測会・イベントスケジュール</p>
+      </div>
+      <div class="live-list">
+        <!-- a template -->
+         <div class="glass-card live-item">
+            <div class="live-date">
+              <span class="day"> dd </span>
+              <span class="month"> 月</span>
+            </div>
+            <div class="live-info">
+              <h3> タイトル </h3>
+              <p><span><i class="fa-solid fa-location-dot"></i> 場所 </span> <span><i class="fa-solid fa-clock"></i> hh:mm - hh:mm</span></p>
+            </div>
+            <div>
+              <span class="badge">予約受付中</span>
+            </div>
+          </div>
+        <!-- a template -->
+         <div class="glass-card live-item">
+            <div class="live-date">
+              <span class="day"> dd </span>
+              <span class="month"> 月</span>
+            </div>
+            <div class="live-info">
+              <h3> タイトル </h3>
+              <p><span><i class="fa-solid fa-location-dot"></i> 場所 </span> <span><i class="fa-solid fa-clock"></i> hh:mm - hh:mm</span></p>
+            </div>
+            <div>
+              <span class="badge">予約受付中</span>
+            </div>
+          </div>
+        <!-- a template -->
+         <div class="glass-card live-item">
+            <div class="live-date">
+              <span class="day"> dd </span>
+              <span class="month"> 月</span>
+            </div>
+            <div class="live-info">
+              <h3> タイトル </h3>
+              <p><span><i class="fa-solid fa-location-dot"></i> 場所 </span> <span><i class="fa-solid fa-clock"></i> hh:mm - hh:mm</span></p>
+            </div>
+            <div>
+              <span class="badge">予約受付中</span>
+            </div>
+          </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SNS -->
+  <section id="sns">
+    <div class="container">
+      <div class="section-title">
+        <h2>Official SNS</h2>
+        <p>ライブ公開やイベント情報発信を行っています</p>
+      </div>
+      <div class="sns-container">
+        <a href="#" class="glass-card sns-card instagram">
+          <i class="fa-brands fa-instagram"></i>
+          <h4>Instagram</h4>
+        <!-- <p>天文サークル公式</p> -->
+         <p>※準備中</p>
+        </a>
+        <a href="#" class="glass-card sns-card youtube">
+          <i class="fa-brands fa-youtube"></i>
+          <h4>YouTube</h4>
+          <!-- <p>ライブを配信しています</p> -->
+           <p>※準備中</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 会員ポータル (Portal) -->
+  <section id="portal">
+    <div class="container">
+      <div class="portal-section glass-card">
+        <h3>ポータルサイトはこちら</h3>
+        <p>サークル部員専用のポータルページです。現在準備中です。中途半端です。</p>
+        <a href="#" class="btn btn-primary"><i class="fa-solid fa-right-to-bracket"></i> ログイン</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- フッター (Footer) -->
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <h3>天文サークル@CIST</h3>
+          <p>公式ウェブサイト</p>
+        </div>
+        <div class="footer-sns">
+          <a href="#" class="footer-sns-icon"><i class="fa-brands fa-discord"></i></a>
+          <a href="#" class="footer-sns-icon"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" class="footer-sns-icon"><i class="fa-brands fa-youtube"></i></a>
+          <a href="#" class="footer-sns-icon"><i class="fa-brands fa-github"></i></a>
+        </div>
+      </div>
+      <div class="copyright">
+        &copy; 2026 CIST Astronomy. All Rights Reserved.
+      </div>
+    </div>
+  </footer>
+
+  <!-- JavaScript (星空アニメーション・ナビゲーション制御) -->
+</body>
+</html>
