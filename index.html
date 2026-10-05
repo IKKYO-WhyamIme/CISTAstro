@@ -75,7 +75,7 @@
   <!-- 写真ギャラリー -->
   <div class="container">
     <div class="photo-grid">
-      <div class="photo-card">
+      <!-- <div class="photo-card">
         <img src="" alt="満天の星空">
         <div class="photo-overlay">
           <h4>ある写真</h4>
@@ -95,7 +95,14 @@
           <h4>ある写真</h4>
           <p>ある場所でのある写真</p>
         </div>
+      </div> -->
+
+  <!-- if no pic-->    
+      <div class="photo-grid">
+        <h4>写真が追加されると、ここに表示されます</h4>
       </div>
+  <!-- //if no pic-->
+      
     </div>
   </div>
 
@@ -115,30 +122,25 @@
         <div class="about-stats">
           <div class="stat-box">
             <i class="fa-solid fa-users"></i>
-            <span class="stat-number">a人</span>
+            <span class="stat-number">8人</span>
             <span class="stat-label">サークル部員数</span>
           </div>
           <div class="stat-box">
             <i class="fa-solid fa-telescope"></i>
-            <span class="stat-number">b台</span>
+            <span class="stat-number">3台</span>
             <span class="stat-label">保有天体望遠鏡</span>
           </div>
           <div class="stat-box">
             <i class="fa-solid fa-calendar-check"></i>
-            <span class="stat-number">月c〜d回</span>
-            <span class="stat-label">定期観測会</span>
+            <span class="stat-number">月n回</span>
+            <span class="stat-label">定期観測会(未定です)</span>
           </div>
           <div class="stat-box">
             <i class="fa-solid fa-campground"></i>
-            <span class="stat-number">年e回</span>
-            <span class="stat-label">観測合宿</span>
+            <span class="stat-number">年m回</span>
+            <span class="stat-label">観測合宿(未定です)</span>
           </div>
-          <div class="stat-box">
-            <i class="fa-solid fa-camera"></i>
-            <span class="stat-number">a, b, c, d, e ∈ ℝ</span>
-            <span class="stat-label"></span>
-            <span class="stat-label">文字の定義</span>
-          </div>
+          
         </div>
       </div>
     </div>
@@ -193,8 +195,9 @@
         <p>直近の観測会・イベントスケジュール</p>
       </div>
       <div class="live-list">
+        
         <!-- a template -->
-         <div class="glass-card live-item">
+        <!-- <div class="glass-card live-item">
             <div class="live-date">
               <span class="day"> dd </span>
               <span class="month"> 月</span>
@@ -206,35 +209,12 @@
             <div>
               <span class="badge">予約受付中</span>
             </div>
-          </div>
+          </div> -->
         <!-- a template -->
-         <div class="glass-card live-item">
-            <div class="live-date">
-              <span class="day"> dd </span>
-              <span class="month"> 月</span>
-            </div>
-            <div class="live-info">
-              <h3> タイトル </h3>
-              <p><span><i class="fa-solid fa-location-dot"></i> 場所 </span> <span><i class="fa-solid fa-clock"></i> hh:mm - hh:mm</span></p>
-            </div>
-            <div>
-              <span class="badge">予約受付中</span>
-            </div>
-          </div>
-        <!-- a template -->
-         <div class="glass-card live-item">
-            <div class="live-date">
-              <span class="day"> dd </span>
-              <span class="month"> 月</span>
-            </div>
-            <div class="live-info">
-              <h3> タイトル </h3>
-              <p><span><i class="fa-solid fa-location-dot"></i> 場所 </span> <span><i class="fa-solid fa-clock"></i> hh:mm - hh:mm</span></p>
-            </div>
-            <div>
-              <span class="badge">予約受付中</span>
-            </div>
-          </div>
+
+        <!-- if no events -->
+        <h2>直近のイベントはありません。</h2>
+        <!-- //if no events -->
 
       </div>
     </div>
