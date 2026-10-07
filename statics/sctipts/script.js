@@ -89,11 +89,11 @@ const alyoutube = document.getElemenById('youtube');
 
 aldiscord.addEventListener('click', () => {
 
-    alert("現在検討中です。");
+    alert('現在検討中です。');
 
 });
 alyoutube.addEventListener('click', () => {
 
-    alert("現在準備中です。その時を楽しみにお待ちください。");
+    alert('現在準備中です。その時を楽しみにお待ちください。');
 
 });
