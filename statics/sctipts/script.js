@@ -84,8 +84,8 @@
 
 // NoUrlExestsAlert
 
-const aldiscord = doocument.getElementById('discord');
-const alyoutube = document.getElemenById('youtube');
+const aldiscord = document.getElementById('discord');
+const alyoutube = document.getElementById('youtube');
 
 aldiscord.addEventListener('click', () => {
 
