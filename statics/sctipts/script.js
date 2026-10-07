@@ -91,9 +91,9 @@ aldiscord.addEventListener("click", () => {
 
     alert("現在検討中です。");
 
-};
+});
 alyoutube.addEventListener("click", () => {
 
     alert("現在準備中です。その時を楽しみにお待ちください。");
 
-};
+});
