@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>Firebase Storage 画像アップロード＆表示テスト</title>
+    <style>
+        body { font-family: sans-serif; margin: 30px; }
+        .preview-container { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 20px; }
+        .preview-container img { width: 150px; height: 150px; object-fit: cover; border-radius: 4px; }
+    </style>
+</head>
+<body>
+
+    <h1>写真アップロード・表示アプリ</h1>
+
+    <!-- 画像選択フォーム -->
+    <input type="file" id="imageInput" accept="image/*">
+    <button id="uploadButton">アップロード</button>
+    <p id="status"></p>
+
+    <h2>保存された写真一覧</h2>
+    <div id="imageContainer" class="preview-container"></div>
+
+    <!-- FirebaseのスクリプトをCDNから読み込む（ES Modules版） -->
+    <script type="module">
+        // 1. FirebaseのSDKをインポート
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/13.0.0/firebase-app.js";
+        import { getStorage, ref, uploadBytes, getDownloadURL, listAll } from "https://www.gstatic.com/firebasejs/13.0.0/firebase-storage.js";
+
+        // 2. Step 1で取得した自分のfirebaseConfigに書き換えてください
+        const firebaseConfig = {
+            apiKey: "AIzaSyDStjA0hv8HQcHXtEtlUz-2N2vuG3OzXSY",
+            authDomain: "test-622ec.firebaseapp.com",
+            projectId: "test-622ec",
+            storageBucket: "test-622ec.firebasestorage.app",
+            messagingSenderId: "444615504031",
+            appId: "1:444615504031:web:078d0723e04d74708632aa"
+        };
+
+        // 3. Firebaseの初期化
+        const app = initializeApp(firebaseConfig);
+        const storage = getStorage(app);
+
+        const imageInput = document.getElementById('imageInput');
+        const uploadButton = document.getElementById('uploadButton');
+        const status = document.getElementById('status');
+        const imageContainer = document.getElementById('imageContainer');
+
+        // 【機能A】画像をアップロードする処理
+        uploadButton.addEventListener('click', async () => {
+            const file = imageInput.files[0];
+            if (!file) {
+                alert('画像ファイルを選択してください。');
+                return;
+            }
+
+            status.textContent = 'アップロード中...';
+
+            try {
+                // 保存先のパスとファイル名を決定（今回は 'images/' フォルダの中に元のファイル名で保存）
+                // ※同名ファイルの上書きを防ぎたい場合は Date.now() などをファイル名の頭につけると安全です
+                const storageRef = ref(storage, 'images/' + Date.now() + '_' + file.name);
+
+                // アップロード実行
+                const snapshot = await uploadBytes(storageRef, file);
+                status.textContent = 'アップロード成功！';
+                
+                // フォームをリセットして一覧を再読み込み
+                imageInput.value = '';
+                loadImages();
+
+            } catch (error) {
+                console.error('アップロードエラー:', error);
+                status.textContent = 'アップロードに失敗しました。';
+            }
+        });
+
+        // 【機能B】Storageから画像の一覧を取得して表示する処理
+        async function loadImages() {
+            imageContainer.innerHTML = ''; // 一度キレイにする
+            
+            try {
+                const listRef = ref(storage, 'images/');
+                const res = await listAll(listRef);
+
+                // フォルダ内のファイルそれぞれに対してループ処理
+                for (const itemRef of res.items) {
+                    // 各ファイルのダウンロード用URLを取得
+                    const url = await getDownloadURL(itemRef);
+
+                    // imgタグを作って画面に追加
+                    const img = document.createElement('img');
+                    img.src = url;
+                    imageContainer.appendChild(img);
+                }
+            } catch (error) {
+                console.error('画像読み込みエラー:', error);
+            }
+        }
+
+        // ページを読み込んだときに画像一覧を最初に取得する
+        window.addEventListener('DOMContentLoaded', () => {
+            loadImages();
+        });
+    </script>
+</body>
+</html>
+
+<script type="module">
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/13.0.0/firebase-app.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  const firebaseConfig = {
+    apiKey: "AIzaSyDStjA0hv8HQcHXtEtlUz-2N2vuG3OzXSY",
+    authDomain: "test-622ec.firebaseapp.com",
+    projectId: "test-622ec",
+    storageBucket: "test-622ec.firebasestorage.app",
+    messagingSenderId: "444615504031",
+    appId: "1:444615504031:web:078d0723e04d74708632aa"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+</script>
