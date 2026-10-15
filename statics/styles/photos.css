@@ -23,8 +23,6 @@
     }
 
     body {
-    　display: block;
-      justify-content: center;
       align-items: center;      
       font-family: 'Noto Sans JP', sans-serif;
       background-color: var(--bg-dark);
