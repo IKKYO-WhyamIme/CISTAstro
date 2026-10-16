@@ -334,7 +334,7 @@
     -------------------------------------------------- */
     footer {
       background: #04060c;
-      margin-innline: 0;
+      width: auto;
       padding: 40px 0 20px;
       border-top: 1px solid rgba(255, 255, 255, 0.05);
       margin-top: 60px;
