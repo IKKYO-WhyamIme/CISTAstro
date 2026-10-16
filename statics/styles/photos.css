@@ -251,7 +251,7 @@ padding: 20px;
 opacity: 0;
 visibility: hidden;
 transform: translateX(-50%);
-transition: transform 0.0s ease, opacity 0.7s ease, visibility 0.4s linear 0.3s;
+transition: transform 0.0s ease, opacity 0.7s ease, visibility 0.4s linear 0.3s, width 0.7s ease;
 z-index: 2;
 }
 
@@ -271,6 +271,7 @@ opacity: 1;
 visibility: visible;
 transform: translate(-50%, 15rem);
 transition-delay: 0s;
+width: 120%;
 }
 
 .pic-container:has(.checkbox:checked) .photos {
