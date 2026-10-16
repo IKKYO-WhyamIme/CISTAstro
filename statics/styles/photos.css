@@ -25,6 +25,7 @@
     body {   
       display: flex;
       flex-direction: column;
+      align-items: center;
       font-family: 'Noto Sans JP', sans-serif;
       background-color: var(--bg-dark);
       color: var(--text-main);
@@ -429,16 +430,6 @@
       .gallery-item:nth-child(even) .gallery-image-wrapper { order: 2; }
       .gallery-image-wrapper img { height: 260px; }
     }
-
-
-
-      body {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        min-height: 100vh;
-        margin: 0;
-      }
       
       .pic-container {
         position: relative;
