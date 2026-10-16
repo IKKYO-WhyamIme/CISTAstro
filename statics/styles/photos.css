@@ -339,6 +339,7 @@
       padding: 40px 0 20px;
       border-top: 1px solid rgba(255, 255, 255, 0.05);
       margin-top: 60px;
+      width: -webkit-fill-available;
     }
 
     .footer-content {
