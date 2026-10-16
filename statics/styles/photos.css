@@ -453,6 +453,7 @@
         bottom: 0;
         left: 50%;
         width: 50%;
+        margin: 2vw;
         box-sizing: border-box;
         background: rgba(0, 0, 0, 0.7);
         border-radius: 10px;
