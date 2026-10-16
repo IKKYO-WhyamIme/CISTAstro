@@ -22,8 +22,7 @@
       scroll-behavior: smooth;
     }
 
-    body {
-      align-items: center;      
+    body {   
       font-family: 'Noto Sans JP', sans-serif;
       background-color: var(--bg-dark);
       color: var(--text-main);
