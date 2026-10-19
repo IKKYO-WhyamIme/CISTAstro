@@ -176,6 +176,7 @@ position: relative;
 }
 
 .hero-content {
+display: flex;
 max-width: 800px;
 padding: 0 20px;
 animation: fadeIn 1.5s ease-out;
