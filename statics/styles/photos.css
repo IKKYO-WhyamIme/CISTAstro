@@ -183,7 +183,7 @@ animation: fadeIn 1.5s ease-out;
 
 .hero h1 {
 display: flex;
-margin: auto;
+text-align: center;
 font-family: 'Cinzel', serif;
 font-size: 3.2rem;
 letter-spacing: 3px;
