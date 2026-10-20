@@ -176,14 +176,12 @@ position: relative;
 }
 
 .hero-content {
-display: flex;
 max-width: 800px;
 padding: 0 20px;
 animation: fadeIn 1.5s ease-out;
 }
 
 .hero h1 {
-display: flex;
 font-family: 'Cinzel', serif;
 font-size: 3.2rem;
 letter-spacing: 3px;
@@ -194,7 +192,6 @@ background: linear-gradient(135deg, #ffffff 0%, var(--accent-cyan) 100%);
 }
 
 .hero p.subtitle {
-display: flex;
 font-size: 1.1rem;
 color: var(--text-muted);
 letter-spacing: 1px;
