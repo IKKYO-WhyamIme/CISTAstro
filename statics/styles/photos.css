@@ -360,6 +360,10 @@ to { opacity: 1; transform: translateY(0); }
 
 /* レスポンシブ (スマホ表示時は1列に変更) */
 @media (max-width: 768px) {
+body {
+text-align: center;
+align-items: center;
+}
 .menu-toggle { display: block; }
 .nav-menu {
 position: fixed;
