@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="天文サークル は、宇宙観測・星空写真・天文学を楽しむ大学の天文サークルです。イベント情報や活動内容を紹介します�[...]
+  <meta name="description" content="天文サークル は、宇宙観測・星空写真・天文学を楽しむ大学の天文サークルです。イベント情報や活動内容を紹介します。">
   <meta name="keywords" content="天文サークル, 星空, 宇宙, 天体観測, CIST Astronomy, 星空写真, 望遠鏡, 星空イベント">
   <meta name="author" content="CIST Astronomy">
   <meta name="robots" content="index, follow">
@@ -13,7 +13,7 @@
   <title>Photos</title>
 
   <meta property="og:title" content="CIST Astronomy - 天文サークル">
-  <meta property="og:description" content="天文サークル 。が撮影した、素晴らしい写真たちをご覧ください。">
+  <meta property="og:description" content="天文サークルが撮影した、素晴らしい写真たちをご覧ください。">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="CIST Astronomy">
   <meta property="og:locale" content="ja_JP">
@@ -22,35 +22,35 @@
 
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="CIST Astronomy - 天文サークル">
-  <meta name="twitter:description" content="宇宙観測・星空写真・天文学を楽しむ大学の天文サークル。ここでは私たちが撮影した素晴らしい写真達を紹介しま[...]
+  <meta name="twitter:description" content="宇宙観測・星空写真・天文学を楽しむ大学の天文サークル。ここでは私たちが撮影した素晴らしい写真達を紹介します。">
   <meta name="twitter:image" content="https://images.unsplash.com/photo-1465101162946-4377e57745c3?auto=format&fit=crop&w=1200&q=80">
 
   <!-- Google Fonts & FontAwesome -->
   <link rel="stylesheet" href="https://ikkyo-whyamime.github.io/CISTAstro/statics/styles/styles.css">
   <link rel="stylesheet" href="https://ikkyo-whyamime.github.io/CISTAstro/statics/styles/photos.css">
-　<link rel="preconnect" href="https://fonts.googleapis.com">
-　<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Noto+Sans+JP:wght@300;400;600;700&display=swap" rel="stylesheet">
-　<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <script src="statics/sctipts/photos.js" defer></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Noto+Sans+JP:wght@300;400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script src="statics/sctipts/photos.js" defer></script>
 </head>
 <script>
+  window.addEventListener('DOMContentLoaded', () => {
+    const aldiscord = document.getElementById('discord');
+    const alyoutube = document.getElementById('youtube');
 
-  
-const aldiscord = document.getElementById('discord');
-const alyoutube = document.getElementById('youtube');
-
-aldiscord.addEventListener('click', () => {
-    alert('現在検討中です。');
-});
-  
-alyoutube.addEventListener('click', () => {
-    alert('現在準備中です。その時を楽しみにお待ちください。');
-});
-  
+    if (aldiscord) {
+      aldiscord.addEventListener('click', (e) => {
+        e.preventDefault();
+        alert('現在検討中です。');
+      });
+    }
+    if (alyoutube) {
+      alyoutube.addEventListener('click', (e) => {
+        e.preventDefault();
+        alert('現在準備中です。その時を楽しみにお待ちください。');
+      });
+    }
+  });
 </script>
 <body>
 
@@ -79,7 +79,7 @@ alyoutube.addEventListener('click', () => {
     </div>
   </header>
 
-  <!-- ヒーローセクション (index.htmlのデザインを継承) -->
+  <!-- ヒーローセクション -->
   <section class="hero">
     <div class="hero-content">
       <h1>Photography</h1>
@@ -90,64 +90,66 @@ alyoutube.addEventListener('click', () => {
     </div>
   </section>
 
+  <!-- カテゴリタブメニュー -->
+  <div class="container">
+    <div class="category-tabs">
+      <button class="tab-btn active" data-category="all">すべて</button>
+      <button class="tab-btn" data-category="moon">月</button>
+      <button class="tab-btn" data-category="saturn">土星</button>
+      <button class="tab-btn" data-category="jupiter">木星</button>
+    </div>
+  </div>
+
   <!-- ギャラリーメインコンテンツ -->
   <section class="gallery-section">
 
-    <!-- photo -->
-        <div class="pic-container">
-        <img class="photos" src="https://lh3.googleusercontent.com/d/1dOMPf7YWbNZqN7ee0BCfm-AFiTlvk_AV" alt="Photo 1">
-        <input type="checkbox" class="checkbox">
-        <div class="caption">
-            <h2>The View of Osaka</h2>
-            <p>Osaka is a vibrant city in Japan known for its delicious cuisine and modern architecture.</p>
-            <p>Experience the unique blend of traditional and contemporary culture in this exciting metropolis.</p>
-
-        </div>
+    <!-- photo 1: 月 -->
+    <div class="pic-container" data-category="moon">
+      <img class="photos" src="https://lh3.googleusercontent.com/d/1dOMPf7YWbNZqN7ee0BCfm-AFiTlvk_AV" alt="月面写真">
+      <input type="checkbox" class="checkbox">
+      <div class="caption">
+        <h2>月面クレーター</h2>
+        <p>上弦の月に見られる起伏に富んだクレーター群を望遠鏡で捉えました。</p>
+        <p>光と影が織りなす繊細な地形の美しさをお楽しみください。</p>
+      </div>
     </div>
-    <!-- //photo -->
-  
-    <!-- photo -->
-        <div class="pic-container">
-        <img class="photos" src="https://lh3.googleusercontent.com/d/1dOMPf7YWbNZqN7ee0BCfm-AFiTlvk_AV" alt="Photo 1">
-        <input type="checkbox" class="checkbox">
-        <div class="caption">
-            <h2>The View of Osaka</h2>
-            <p>Osaka is a vibrant city in Japan known for its delicious cuisine and modern architecture.</p>
-            <p>Experience the unique blend of traditional and contemporary culture in this exciting metropolis.</p>
 
-        </div>
+    <!-- photo 2: 土星 -->
+    <div class="pic-container" data-category="saturn">
+      <img class="photos" src="https://lh3.googleusercontent.com/d/1dOMPf7YWbNZqN7ee0BCfm-AFiTlvk_AV" alt="土星写真">
+      <input type="checkbox" class="checkbox">
+      <div class="caption">
+        <h2>土星の環 (Saturn)</h2>
+        <p>美しい環を持つ太陽系の宝石、土星の撮影に成功しました。</p>
+        <p>シーリング（大気の揺らぎ）が良い夜にスタッキング処理を行っています。</p>
+      </div>
     </div>
-    <!-- //photo -->
-  
-    <!-- photo -->
-        <div class="pic-container">
-        <img class="photos" src="https://lh3.googleusercontent.com/d/1dOMPf7YWbNZqN7ee0BCfm-AFiTlvk_AV" alt="Photo 1">
-        <input type="checkbox" class="checkbox">
-        <div class="caption">
-            <h2>The View of Osaka</h2>
-            <p>Osaka is a vibrant city in Japan known for its delicious cuisine and modern architecture.</p>
-            <p>Experience the unique blend of traditional and contemporary culture in this exciting metropolis.</p>
 
-        </div>
+    <!-- photo 3: 木星 -->
+    <div class="pic-container" data-category="jupiter">
+      <img class="photos" src="https://lh3.googleusercontent.com/d/1dOMPf7YWbNZqN7ee0BCfm-AFiTlvk_AV" alt="木星写真">
+      <input type="checkbox" class="checkbox">
+      <div class="caption">
+        <h2>木星と大赤斑 (Jupiter)</h2>
+        <p>ガス惑星特有の美しい縞模様と、象徴的な大赤斑をとらえた一枚。</p>
+        <p>ガリレオ衛星の姿も周囲に確認できる貴重な観測記録です。</p>
+      </div>
     </div>
-    <!-- //photo -->
-  
-    <!-- photo -->
-        <div class="pic-container">
-        <img class="photos" src="https://lh3.googleusercontent.com/d/1dOMPf7YWbNZqN7ee0BCfm-AFiTlvk_AV" alt="Photo 1">
-        <input type="checkbox" class="checkbox">
-        <div class="caption">
-            <h2>The View of Osaka</h2>
-            <p>Osaka is a vibrant city in Japan known for its delicious cuisine and modern architecture.</p>
-            <p>Experience the unique blend of traditional and contemporary culture in this exciting metropolis.</p>
 
-        </div>
+    <!-- photo 4: 月 (追加例) -->
+    <div class="pic-container" data-category="moon">
+      <img class="photos" src="https://lh3.googleusercontent.com/d/1dOMPf7YWbNZqN7ee0BCfm-AFiTlvk_AV" alt="満月">
+      <input type="checkbox" class="checkbox">
+      <div class="caption">
+        <h2>月夜の輝き (Full Moon)</h2>
+        <p>夜空にぽっかりと浮かぶ満月の圧倒的な存在感を収めました。</p>
+        <p>ウサギの餅つきに見立てられる模様の細部までご覧いただけます。</p>
+      </div>
     </div>
-    <!-- //photo -->
-    
+
   </section>
 
-  <!-- フッター (index.htmlと統一) -->
+  <!-- フッター -->
   <footer>
     <div class="container">
       <div class="footer-content">
