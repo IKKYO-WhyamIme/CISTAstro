@@ -1,5 +1,7 @@
-    // 1. 背景の星空キャンバス描画
-    const canvas = document.getElementById('stars-canvas');
+document.addEventListener('DOMContentLoaded', () => {
+  // 1. 背景の星空キャンバス描画
+  const canvas = document.getElementById('stars-canvas');
+  if (canvas) {
     const ctx = canvas.getContext('2d');
     let stars = [];
     const numStars = 150;
@@ -46,33 +48,39 @@
     resizeCanvas();
     initStars();
     drawStars();
+  }
 
-    // 2. スクロール監視による順番フェードインアニメーション (Intersection Observer API)
-    const galleryItems = document.querySelectorAll('.gallery-item');
+  // 2. カテゴリタブによる写真フィルタリング機能
+  const tabButtons = document.querySelectorAll('.tab-btn');
+  const picContainers = document.querySelectorAll('.pic-container');
 
-    const observerOptions = {
-      root: null,
-      rootMargin: '0px 0px -150px 0px', // 画面下部から150px手前で発火
-      threshold: 0.15
-    };
+  tabButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      // すべてのタブから active クラスを削除し、クリックされたものに付与
+      tabButtons.forEach(btn => btn.classList.remove('active'));
+      button.classList.add('active');
 
-    const observer = new IntersectionObserver((entries, observer) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          // 画面内に入ったら 'is-visible' クラスを付与してCSSアニメーションを発火
-          entry.target.classList.add('is-visible');
+      const selectedCategory = button.getAttribute('data-category');
+
+      picContainers.forEach(container => {
+        const containerCategory = container.getAttribute('data-category');
+
+        if (selectedCategory === 'all' || containerCategory === selectedCategory) {
+          container.classList.remove('hide');
+        } else {
+          container.classList.add('hide');
         }
       });
-    }, observerOptions);
-
-    galleryItems.forEach(item => {
-      observer.observe(item);
     });
+  });
 
-    // 3. モバイルメニューのトグル
-    const menuToggle = document.getElementById('menu-toggle');
-    const navMenu = document.getElementById('nav-menu');
+  // 3. モバイルメニューのトグル
+  const menuToggle = document.getElementById('menu-toggle');
+  const navMenu = document.getElementById('nav-menu');
 
+  if (menuToggle && navMenu) {
     menuToggle.addEventListener('click', () => {
       navMenu.classList.toggle('active');
     });
+  }
+});
